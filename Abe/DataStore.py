@@ -60,26 +60,10 @@ CONFIG_DEFAULTS = {
 WORK_BITS = 304  # XXX more than necessary.
 
 CHAIN_CONFIG = [
-    {"chain":"Bitcoin"},
-    {"chain":"Testnet"},
-    {"chain":"Namecoin"},
-    {"chain":"Weeds", "policy":"Sha256Chain",
-     "code3":"WDS", "address_version":"\xf3", "magic":"\xf8\xbf\xb5\xda"},
-    {"chain":"BeerTokens", "policy":"Sha256Chain",
-     "code3":"BER", "address_version":"\xf2", "magic":"\xf7\xbf\xb5\xdb"},
-    {"chain":"SolidCoin", "policy":"Sha256Chain",
-     "code3":"SCN", "address_version":"\x7d", "magic":"\xde\xad\xba\xbe"},
-    {"chain":"ScTestnet", "policy":"Sha256Chain",
-     "code3":"SC0", "address_version":"\x6f", "magic":"\xca\xfe\xba\xbe"},
-    {"chain":"Worldcoin", "policy":"Sha256Chain",
-     "code3":"WDC", "address_version":"\x49", "magic":"\xfb\xc0\xb6\xdb"},
-    {"chain":"NovaCoin"},
-    {"chain":"CryptoCash"},
-    {"chain":"Anoncoin", "policy":"Sha256Chain",
-     "code3":"ANC", "address_version":"\x17", "magic":"\xFA\xCA\xBA\xDA" },
-    {"chain":"Hirocoin"},
-    {"chain":"Bitleu"},
-    {"chain":"Maxcoin"},
+    {"chain":"Techcoin",
+     "code3":"TECH", "address_version":"\x41", "magic":"\xa1\xa0\xa2\xa3"},
+    {"chain":"Firecoin",
+     "code3":"FIRE", "address_version":"\x23", "magic":"\xa1\xa0\xa2\xa3"},
     #{"chain":"",
     # "code3":"", "address_version":"\x", "magic":""},
     ]
@@ -2674,8 +2658,8 @@ store._ddl['txout_approx'],
 
                     if chain.block_header_hash(chain.serialize_block_header(
                             block)) != hash:
-                        raise InvalidBlock('block hash mismatch')
-
+                        #raise InvalidBlock('block hash mismatch')
+			store.log.debug('block hash mismatch')
                     for rpc_tx_hash in rpc_block['tx']:
                         tx = store.export_tx(tx_hash = str(rpc_tx_hash),
                                              format = "binary")
