@@ -52,6 +52,11 @@ Bitleu (a Scrypt-Jane coin) depends on the yac_scrypt module.
 Copperlark (a Keccak coin) depends on the sha3 module available via
 "easy_install pysha3".
 
+X13 chains depends on x13_hash https://github.com/mindfox/x13-hash
+
+X15 chains depends on bitblock_hash 
+https://github.com/bitblockproject/bitblock_hash 
+
 License
 -------
 
