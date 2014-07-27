@@ -14,16 +14,15 @@
 # License along with this program.  If not, see
 # <http://www.gnu.org/licenses/agpl.html>.
 
-from .X13Chain import X13Chain
-from .PpcPosChain import PpcPosChain
+from .X13PosChain import X13PosChain
 
-class Techcoin(X13Chain, PpcPosChain):
+class Techcoin(X13PosChain):
     def __init__(chain, **kwargs):
         chain.name = 'Techcoin'
         chain.code3 = 'TECH'
         chain.address_version = '\x41'
         chain.script_addr_vers = '\x05'
         chain.magic = '\xa1\xa0\xa2\xa3'
-#        datadir_conf_file_name = 'Techcoin.conf'
-        X13Chain.__init__(chain, **kwargs)
+        datadir_conf_file_name = 'Techcoin.conf'
+        X13PosChain.__init__(chain, **kwargs)
         

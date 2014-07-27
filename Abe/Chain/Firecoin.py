@@ -14,15 +14,14 @@
 # License along with this program.  If not, see
 # <http://www.gnu.org/licenses/agpl.html>.
 
-from .X15Chain import X15Chain
-from .PpcPosChain import PpcPosChain
+from .X15PosChain import X15PosChain
 
-class Firecoin(X15Chain, PpcPosChain):
+class Firecoin(X15PosChain):
     def __init__(chain, **kwargs):
         chain.name = 'Firecoin'
         chain.code3 = 'FIRE'
         chain.address_version = '\x23'
         chain.script_addr_vers = '\x05'
         chain.magic = '\xa1\xa0\xa2\xa3'
-#        datadir_conf_file_name = 'Firecoin.conf'
-        X15Chain.__init__(chain, **kwargs)
+        datadir_conf_file_name = 'Firecoin.conf'
+        X15PosChain.__init__(chain, **kwargs)

@@ -18,8 +18,9 @@ from . import BaseChain
 
 class X15Chain(BaseChain):
     """
-    A blockchain that hashes block headers using the X11 algorithm.
-    The current implementation requires the xcoin_hash module.
+    A blockchain that hashes block headers using the X15 algorithm.
+    The current implementation requires the bitblock_hash module.
+    https://github.com/bitblockproject/bitblock_hash
     """
 
     def block_header_hash(chain, header):

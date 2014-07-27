@@ -2673,9 +2673,9 @@ store._ddl['txout_approx'],
                         'height':   height,
                         }
 
-                    if chain.block_header_hash(chain.serialize_block_header(
-                            block)) != hash:
-                        raise InvalidBlock('block hash mismatch')
+                   # if chain.block_header_hash(chain.serialize_block_header(
+                   #         block)) != hash:
+                   #     raise InvalidBlock('block hash mismatch')
 
                     for rpc_tx_hash in rpc_block['tx']:
                         tx = store.export_tx(tx_hash = str(rpc_tx_hash),
